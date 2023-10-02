@@ -4,14 +4,15 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-
+import logo from './1.jpg'
 
 
 function HeaderComp() {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary mb-3">
+            <Navbar expand="lg" className="bg-body-tertiary mb-5">
                 <Container fluid>
+                    <img src={logo} />
                     <Navbar.Brand href="#">News</Navbar.Brand>
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
