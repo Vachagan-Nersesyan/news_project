@@ -3,8 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
 
 import logo from './1.jpg'
+
 
 
 function HeaderComp() {
@@ -12,7 +14,7 @@ function HeaderComp() {
         <>
             <Navbar expand="lg" className="bg-body-tertiary mb-5">
                 <Container fluid>
-                    <img src={logo} />
+                    <Image src={logo} style={{width : '5%'}}  />
                     <Navbar.Brand href="#">News</Navbar.Brand>
                     <Navbar.Collapse id="navbarScroll">
                         <Nav

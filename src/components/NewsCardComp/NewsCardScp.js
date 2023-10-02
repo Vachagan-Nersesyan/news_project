@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 function NewsCardComp({ info }) {
     return (
-            <Col lg={3} md={4} sm={6} xs={12}>
+            <Col lg={3} md={4} sm={6} xs={12} >
                 <Card className='mb-4'>
                     <Card.Img variant="top" src={info.picture} />
                     <Card.Body>

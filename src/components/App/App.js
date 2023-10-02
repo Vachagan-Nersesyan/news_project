@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import HeaderComp from '../Header'
 import NewsCardComp from '../NewsCardComp'
+import UserCardComp from '../UserCardComp'
 
 import { Container, Row } from 'react-bootstrap'
 
@@ -63,6 +64,14 @@ function App() {
         </Row>
 
       </Container>
+
+      <Container className='mb-5'>
+
+        <UserCardComp />
+
+      </Container>
+
+
 
       <Container fluid className='bg-dark text-white p-3 text-center'>
         <Container>
