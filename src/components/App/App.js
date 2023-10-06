@@ -6,9 +6,18 @@ import NewsCardComp from '../NewsCardComp'
 import UserCardComp from '../UserCardComp'
 
 import { Container, Row } from 'react-bootstrap'
+import { useState } from 'react';
 
 
 function App() {
+
+
+  const [showInfo, setShowInfo] = useState(false)
+  const [showInfoObj, setShowInfoObj] = useState({})
+
+  const [showInfoNum, setShowInfoNum] = useState(null)
+
+
 
   const cardInfoArr = [
     {
@@ -16,12 +25,16 @@ function App() {
       title: "Card Title",
       text: "Some quick example text to build on the card title and make up the bulk of the cards content.",
       picture: '/static/images/1.jpg',
+      fullText: 'news full text 1',
+      publishDate: '17.03.2021'
     },
     {
       id: 1,
       title: "Card Title",
       text: "Some quick example text to build on the card title and make up the bulk of the cards content.",
       picture: '/static/images/2.jpg',
+      fullText: 'news full text 2',
+      publishDate: '4.10.2022'
 
     },
     {
@@ -29,6 +42,8 @@ function App() {
       title: "Card Title",
       text: "Some quick example text to build on the card title and make up the bulk of the cards content.",
       picture: '/static/images/3.jpg',
+      fullText: 'news full text 3',
+      publishDate: '25.07.2023'
 
     },
     {
@@ -36,9 +51,27 @@ function App() {
       title: "Card Title",
       text: "Some quick example text to build on the card title and make up the bulk of the cards content.",
       picture: '/static/images/4.jpg',
+      fullText: 'news full text 4',
+      publishDate: '22.01.2023'
 
     },
   ]
+
+
+  const showFullText = (obj) => {
+
+
+    if (obj.id !== showInfoNum) {
+      setShowInfo(true)
+      setShowInfoObj(obj)
+      setShowInfoNum(obj.id)
+
+    } else {
+      setShowInfo(false)
+      setShowInfoNum(null)
+
+    }
+  }
 
 
   return (
@@ -56,12 +89,38 @@ function App() {
         <Row>
           {
             cardInfoArr.map((val) => {
-              return <NewsCardComp info={val} />
+              return <NewsCardComp showFullText={showFullText} info={val} />
             })
           }
 
 
         </Row>
+
+      </Container>
+
+
+      <Container className='mb-5 bg-primary text-white p-4'>
+        {
+          showInfo ?
+            <div>
+              <div>
+                {showInfoObj.id}
+
+              </div>
+              <div>
+                <img src={showInfoObj.picture} style={{ width: '20%' }} />
+
+              </div>
+              <div>
+                {showInfoObj.fullText}
+              </div>
+              <div>
+                {showInfoObj.publishDate}
+              </div>
+            </div>
+
+            : null
+        }
 
       </Container>
 
